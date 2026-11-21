@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Nour Einy ♡</title>
+
+<style>
+:root {
+  --sage:#aab69d;
+  --dark:#435640;
+  --cream:#f8f6ed;
+  --paper:#fffdf5;
+  --gold:#b69a67;
+}
+
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  background:var(--cream);
+  color:var(--dark);
+  font-family:Georgia,serif;
+  text-align:center;
+  overflow-x:hidden;
+}
+p {line-height:1.8}
+button {font-family:Georgia,serif;cursor:pointer}
+h1,h2,h3 {font-weight:normal}
+
+.hero {
+  min-height:100vh;
+  background:linear-gradient(rgba(248,246,237,.78),rgba(248,246,237,.9)),radial-gradient(circle at top,#dce2d2,#f8f6ed 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:35px 20px;
+  position:relative;
+}
+.hero-content {max-width:750px;animation:fade 1.5s ease}
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  color:var(--gold);
+  margin-bottom:25px;
+}
+.hero h1 {
+  font-size:clamp(42px,8vw,75px);
+  margin-bottom:20px;
+}
+.subtitle {
+  font-size:17px;
+  max-width:500px;
+  margin:0 auto 25px;
+  color:#68745f;
+}
+.ornament {color:var(--gold);letter-spacing:12px;margin:25px 0}
+.flower {position:absolute;color:var(--sage);font-size:35px;opacity:.65}
+.f1 {top:12%;left:10%}
+.f2 {bottom:15%;right:12%}
+.f3 {top:20%;right:15%}
+
+.btn {
+  background:var(--dark);
+  color:white;
+  border:none;
+  padding:14px 27px;
+  border-radius:30px;
+  font-size:14px;
+  letter-spacing:1px;
+  transition:.3s;
+}
+.btn:hover {background:var(--gold);transform:translateY(-3px)}
+
+section {padding:85px 22px}
+.section-title {
+  font-size:clamp(30px,5vw,43px);
+  margin-bottom:15px;
+}
+.section-intro {
+  max-width:550px;
+  margin:0 auto;
+  color:#777b6e;
+}
+
+/* LETTER */
+.letter-section,.memories-section {background:var(--paper)}
+.envelope {
+  width:150px;
+  height:105px;
+  margin:35px auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
+  cursor:pointer;
+  transition:transform .3s;
+}
+.envelope:hover {transform:scale(1.1) rotate(-5deg)}
+.tap-text {font-size:13px;color:var(--gold);letter-spacing:2px}
+.letter {
+  display:none;
+  max-width:680px;
+  margin:35px auto;
+  padding:35px;
+  background:white;
+  border:1px solid #ded6bd;
+  box-shadow:0 8px 25px rgba(0,0,0,.07);
+  text-align:left;
+  line-height:1.9;
+  animation:fade .8s ease;
+}
+.letter h2 {text-align:center;margin-bottom:25px}
+.letter p {margin-bottom:18px}
+.signature {color:var(--gold);font-style:italic;text-align:right}
+
+/* REASONS */
+.reasons-section,.song-section {background:#e8eadf}
+.reasons-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:950px;
+  margin:40px auto;
+}
+.reason {
+  background:var(--paper);
+  padding:25px 20px;
+  border-radius:5px;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+  cursor:pointer;
+  transition:transform .3s;
+}
+.reason:hover {transform:translateY(-5px)}
+.reason .symbol {font-size:25px;margin-bottom:12px}
+.reason h3 {margin-bottom:10px;font-size:19px}
+.reason p {display:none;line-height:1.7;font-size:14px}
+.reason.open p {display:block;animation:fade .5s ease}
+
+/* MEMORIES */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+  max-width:750px;
+  margin:40px auto;
+}
+.polaroid {
+  background:white;
+  padding:12px 12px 25px;
+  box-shadow:0 5px 15px rgba(0,0,0,.12);
+  transform:rotate(-2deg);
+}
+.polaroid:nth-child(even) {transform:rotate(2deg)}
+.photo {
+  min-height:190px;
+  background:#e8eadf;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--dark);
+  overflow:hidden;
+  font-size:35px;
+}
+.photo img {width:100%;height:100%;object-fit:cover}
+.polaroid p {margin-top:15px;font-size:14px}
+
+/* SONG */
+.song-card {
+  max-width:500px;
+  margin:35px auto;
+  padding:35px;
+  background:var(--paper);
+  border:1px solid #d8d2bd;
+  border-radius:8px;
+}
+.song-card .music {font-size:45px;margin-bottom:15px}
+.song-card h3 {margin-bottom:10px}
+.song-card a {display:inline-block;margin-top:18px;color:var(--dark)}
+
+/* SURPRISE */
+.surprise-section {background:var(--dark);color:var(--cream)}
+.surprise-section h2 {color:var(--cream)}
+.surprise-section .section-intro {color:#e3e5d9}
+.surprise-section .btn {
+  background:var(--cream);
+  color:var(--dark);
+  margin-top:25px;
+}
+.surprise-message {
+  display:none;
+  max-width:650px;
+  margin:35px auto 0;
+  padding:25px;
+  line-height:1.9;
+  font-size:18px;
+  animation:fade 1s ease;
+}
+
+/* FOOTER */
+footer {
+  background:var(--cream);
+  padding:30px 15px;
+  font-size:14px;
+}
+
+/* FLOATING HEARTS */
+#hearts {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:10;
+}
+.floating {
+  position:absolute;
+  bottom:-30px;
+  animation:float 7s linear forwards;
+  opacity:.7;
+}
+@keyframes float {
+  from {transform:translateY(0) rotate(0deg);opacity:0}
+  15% {opacity:.7}
+  to {transform:translateY(-110vh) rotate(35deg);opacity:0}
+}
+@keyframes fade {
+  from {opacity:0;transform:translateY(10px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
+/* MOBILE */
+@media(max-width:700px) {
+  .reasons-grid {grid-template-columns:repeat(2,1fr);gap:12px}
+  .gallery {gap:15px}
+  .photo {min-height:130px}
+  .letter {padding:22px}
+  section {padding:60px 18px}
+}
+@media(max-width:420px) {
+  .reasons-grid,.gallery {grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- OPENING -->
+<header class="hero">
+  <span class="flower f1">✿</span>
+  <span class="flower f2">❀</span>
+  <span class="flower f3">✿</span>
+
+  <div class="hero-content">
+    <p class="eyebrow">A little place made just for you</p>
+    <h1>For My Nour Einy</h1>
+    <div class="ornament">♡ ✧ ♡</div>
+    <p class="subtitle">
+      Three months of you, three months of us,
+      and Inshallah, a lifetime more.
+    </p>
+    <p class="eyebrow">12 November 2026</p>
+    <button class="btn" onclick="go('letter-section')">
+      Open your little surprise ♡
+    </button>
+  </div>
+</header>
+
+<!-- LOVE LETTER -->
+<section class="letter-section" id="letter-section">
+  <p class="eyebrow">A letter from my heart</p>
+  <h2 class="section-title">A little something for you</h2>
+  <p class="section-intro">
+    I have a few things to tell you, my love.
+    Tap the envelope.
+  </p>
+
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <p class="tap-text">TAP TO OPEN</p>
+
+  <div class="letter" id="letter">
+    <h2>To my Omar, my Nour Einy ♡</h2>
+
+    <p>My love,</p>
+
+    <p>
+      Three months. It sounds like such a small amount of time,
+      but somehow you have become such a big part of my world.
+      I wish I could explain just how much happiness you bring
+      into my life.
+    </p>
+
+    <p>
+      Even with all the distance between us, you have found
+      your way into my everyday moments. Into my thoughts,
+      my smiles, my little daydreams and all the things I wish
+      I could share with you in person.
+    </p>
+
+    <p>
+      I look forward to the day when distance is no longer
+      something we have to think about. When I can see you,
+      hear your voice beside me and make memories with you
+      that don't have to live through a screen.
+    </p>
+
+    <p>
+      I hope you know how special you are to me. I love the
+      little things about you, the way you make me smile,
+      and the person you are. I am grateful that our paths
+      crossed.
+    </p>
+
+    <p>
+      This is only the beginning, ya rohi. I pray that Allah
+      puts barakah in what we have, keeps our hearts close
+      and guides us towards everything beautiful that is
+      written for us.
+    </p>
+
+    <p>
+      Three months down, and Inshallah, so many more to come.
+    </p>
+
+    <p>I love you, my Nour Einy.</p>
+
+    <p class="signature">
+      Forever sending you all my love,<br>
+      Sabrina ♡
+    </p>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="reasons-section">
+  <p class="eyebrow">Little reminders</p>
+  <h2 class="section-title">A few reasons why I adore you</h2>
+  <p class="section-intro">
+    There are more reasons than I could ever fit on this page.
+    Tap each one to reveal a little message.
+  </p>
+
+  <div class="reasons-grid">
+
+    <div class="reason" onclick="this.classList.toggle('open')">
+      <div class="symbol">♡</div>
+      <h3>Your heart</h3>
+      <p>I adore the kindness and gentleness in you. Never underestimate how special that is.</p>
+    </div>
+
+    <div class="reason" onclick="this.classList.toggle('open')">
+      <div class="symbol">✧</div>
+      <h3>Your mind</h3>
+      <p>I love how intelligent you are and how much there is to learn about you and from you.</p>
+    </div>
+
+    <div class="reason" onclick="this.classList.toggle('open')">
+      <div class="symbol">☾</div>
+      <h3>Your smile</h3>
+      <p>One of my favourite things is your smile and how when I see it I cant resist smiling myself. I hope I always give you reasons to smile.</p>
+    </div>
+
+    <div class="reason" onclick="this.classList.toggle('open')">
+      <div class="symbol">🌿</div>
+      <h3>The little things</h3>
+      <p>Even the smallest details about you have a special place in my heart.</p>
+    </div>
+
+    <div class="reason" onclick="this.classList.toggle('open')">
+      <div class="symbol">♡</div>
+      <h3>Being you</h3>
+      <p>I don't need you to be anyone else. I love every part of you even the part that you don't want anyone to know and see and even the ones you apologise for.</p>
+    </div>
+
+    <div class="reason" onclick="this.classList.toggle('open')">
+      <div class="symbol">∞</div>
+      <h3>Our future</h3>
+      <p>I look forward to all the memories we still have to make, Inshallah.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section class="memories-section">
+  <p class="eyebrow">Our little collection</p>
+  <h2 class="section-title">Memories in the making</h2>
+  <p class="section-intro">
+    A little space for the moments that make our story ours.
+    One day, we'll have so many photographs to fill it.
+  </p>
+
+  <div class="gallery">
+
+    <div class="polaroid">
+      <div class="photo">♡</div>
